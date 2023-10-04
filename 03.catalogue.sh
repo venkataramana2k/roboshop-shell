@@ -7,7 +7,7 @@ useradd roboshop
 mkdir /app
 cd /app
 echo -e "\e[32m Downloading New App content and dependencies to catalogue server\e[0m"
-curl -O catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
+curl -O https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
 unzip catalogue.zip
 rm -rf catalogue.zip
 npm install
