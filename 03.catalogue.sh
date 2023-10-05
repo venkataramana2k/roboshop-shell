@@ -19,6 +19,3 @@ mongo --host mongodb-dev.sadguru.shop </app/schema/catalogue.js
 echo -e "\e[32m Enabling and starting the catalogue service\e[0m"
 systemctl daemon-reload
 systemctl enable catalogue
-
-
-
