@@ -18,4 +18,4 @@ mysql -h mysql-dev.sadguru.shop -uroot -pRoboShop@1 </app/schema/shipping.sql
 echo -e "\e[32m Enabling and starting the shipping service \e[0m"
 systemctl daemon-reload
 systemctl enable shipping
-stemctl restart shipping
+systemctl restart shipping
