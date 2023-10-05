@@ -1,4 +1,4 @@
-echo -e "\e[32m Downloading Mongodb Repo\e[0m"
+Echo -e "\e[32m Downloading Mongodb Repo\e[0m"
 cp /root/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongo.repo
 echo -e "\e[32m Installing Mongodb server\e[0m"
 yum install mongodb-org -y
