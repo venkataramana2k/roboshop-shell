@@ -16,7 +16,7 @@ cp /root/roboshop-shell/user.service /etc/systemd/system/user.service
 echo -e "\e[32m Downloading and installing the mongodb schema\e[0m"
 cp /root/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongodb.repo
 yum install mongodb-org-shell -y
-mongo --host mongodb-dev.sadguru.shop.cloud </app/schema/user.js
+mongo --host mongodb-dev.sadguru.shop </app/schema/user.js
 echo -e "\e[32m Enabling and starting the user service\e[0m"
 systemctl daemon-reload
 systemctl enable user
