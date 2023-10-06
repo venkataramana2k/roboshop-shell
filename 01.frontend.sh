@@ -1,4 +1,4 @@
-echo -e "\e[33m installing the Nginx server \e[0m"
+echo -e "\e[33m Installing the Nginx server \e[0m"
 yum install nginx -y
 echo -e "\e[33m Removing default content \e[0m"
 cd /usr/share/nginx/html
