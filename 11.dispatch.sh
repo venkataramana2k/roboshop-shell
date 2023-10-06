@@ -16,3 +16,4 @@ echo -e "\e[32m Enabling and starting the dispatch service\e[0m"
 systemctl daemon-reload
 systemctl enable dispatch
 systemctl restart dispatch
+
