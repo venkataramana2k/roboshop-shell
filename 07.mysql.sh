@@ -11,4 +11,4 @@ mysql -uroot -pRoboShop@1
 echo -e "\e[32m Enabling and starting Mysql server\e[0m"
 systemctl enable mysqld
 systemctl restart mysqld
-08.shipp
+

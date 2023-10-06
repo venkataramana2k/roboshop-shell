@@ -21,3 +21,4 @@ echo -e "\e[32m Enabling and starting the user service\e[0m"
 systemctl daemon-reload
 systemctl enable user
 systemctl restart user
+05
