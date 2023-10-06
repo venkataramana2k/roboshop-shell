@@ -17,3 +17,4 @@ echo -e "\e[32m Enabling and starting the cart service\e[0m"
 systemctl daemon-reload
 systemctl enable cart
 systemctl restart cart
+
