@@ -1,7 +1,7 @@
 echo -e "\e[32m Installing python server\e[0m"
 yum install python36 gcc python3-devel -y
 echo -e "\e[32m Adding user and Location\e[0m"
-useradd roboshop
+useradd robosho
 mkdir /app
 cd /app
 rm -rf *
