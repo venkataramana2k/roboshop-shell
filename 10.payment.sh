@@ -1,7 +1,7 @@
 echo -e "\e[32m Installing python server\e[0m"
 yum install python36 gcc python3-devel -y
 echo -e "\e[32m Adding user and Location\e[0m"
-useraddr roboshop
+useradd roboshop
 mkdir /app
 cd /app
 echo -e "\e[32m Downloading new app content and dependencies to payment server\e[0m"
