@@ -7,6 +7,7 @@ cd /app
 echo -e "\e[32m Downloading new app content to shipping server\e[0m"
 curl -O https://roboshop-artifacts.s3.amazonaws.com/shipping.zip
 unzip shipping.zip
+rm -rf shipping.zip
 echo -e "\e[32m Downloading dependencies and building application to shipping server\e[0m"
 mvn clean package
 mv target/shipping-1.0.jar shipping.jar
