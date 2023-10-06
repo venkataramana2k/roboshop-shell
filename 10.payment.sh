@@ -4,6 +4,7 @@ echo -e "\e[32m Adding user and Location\e[0m"
 useradd roboshop
 mkdir /app
 cd /app
+rm -rf *
 echo -e "\e[32m Downloading new app content and dependencies to payment server\e[0m"
 curl -O https://roboshop-artifacts.s3.amazonaws.com/payment.zip
 unzip payment.zip
