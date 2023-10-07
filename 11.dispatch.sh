@@ -1,4 +1,4 @@
-echo -e "\e[32m Installing going server\e[0m"
+echo -e "\e[32m Installing golang server\e[0m"
 yum install golang -y
 echo -e "\e[32m Adding user and location\e[0m"
 useradd roboshop
