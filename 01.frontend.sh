@@ -1,4 +1,4 @@
-color="\e[33m"
+color="\e[32m"
 nocolor="\e[0m"
 logfile=="/tmp/frontend.log"
 
