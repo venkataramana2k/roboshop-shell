@@ -17,7 +17,6 @@ systemctl enable ${component} &>>${logfile}
 systemctl restart ${component}
 
 
-
-
+n
 
 
