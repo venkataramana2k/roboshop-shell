@@ -21,7 +21,7 @@ app_Start()
   echo -e "$color Downloading New App content and dependencies to ${component} server$nocolor"
   curl -O https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>$logfile
   unzip ${component}.zip &>>$logfile
-  rm -rf ${component}.zip &>>$logfile
+  rm -rf ${component}.zip
 }
 
 mongo_schema()
