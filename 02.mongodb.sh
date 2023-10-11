@@ -1,9 +1,13 @@
-Echo -e "\e[32m Downloading Mongodb Repo\e[0m"
-cp /root/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongo.repo
-echo -e "\e[32m Installing Mongodb server\e[0m"
-yum install mongodb-org -y
-echo -e "\e[32m Changing the listen address\e[0m"
+color="\e[32m"
+nocolor="\e[0m"
+logfile=="/tmp/mongodb.log"
+
+Echo -e "$color Downloading Mongodb Repo$nocolor"
+cp /root/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongo.repo &>>$logfile
+echo -e "$color Installing Mongodb server$nocolor"
+yum install mongodb-org -y &>>$logfile
+echo -e "$color Changing the listen address$nocolor"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
-echo -e "\e[32m Enabling and starting Mongodb server\e[0m"
-systemctl enable mongod
+echo -e "$color Enabling and starting Mongodb server$nocolor"
+systemctl enable mongod &>>$logfile
 systemctl restart mongod
