@@ -18,10 +18,10 @@ app_Start()
   useradd roboshop
   mkdir $app_path
   cd $app_path
-  echo -e "$color Downloading New App content and dependencies to catalogue server$nocolor"
-  curl -O https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>>$logfile
-  unzip catalogue.zip &>>$logfile
-  rm -rf catalogue.zip &>>$logfile
+  echo -e "$color Downloading New App content and dependencies to ${component} server$nocolor"
+  curl -O https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>$logfile
+  unzip ${component}.zip &>>$logfile
+  rm -rf ${component}.zip &>>$logfile
 }
 
 mongo_schema()
@@ -29,7 +29,7 @@ mongo_schema()
   echo -e "$color Downloading and installing mongodb schema$nocolor"
   cp /root/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongodb.repo
   yum install mongodb-org-shell -y &>>$logfile
-  mongo --host mongodb-dev.sadguru.shop <$app_path/schema/catalogue.js &>>$logfile
+  mongo --host mongodb-dev.sadguru.shop <$app_path/schema/${component}.js &>>$logfile
 }
 
 service_start()
