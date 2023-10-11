@@ -1,4 +1,4 @@
-color="$color"
+color="\e[32m"
 nocolor="\e[0m"
 logfile=="/tmp/shipping.log"
 
