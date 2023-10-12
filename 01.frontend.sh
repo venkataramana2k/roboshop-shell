@@ -1,19 +1,19 @@
 source common.sh
 component=nginx
 
-echo -e "$color installing the ${component} server $nocolor"
-yum install ${component} -y &>>${logfile}
+echo -e "$color installing the nginx server $nocolor"
+yum install nginx -y &>>${logfile}
 echo -e "$color Removing default content $nocolor"
-cd /usr/share/${component}/html
+cd /usr/share/nginx/html
 rm -rf * &>>${logfile}
-echo -e "$color Downloading new content to ${component} server $nocolor"
+echo -e "$color Downloading new content to nginx server $nocolor"
 curl -O https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>${logfile}
 unzip frontend.zip &>>${logfile}
 rm -rf frontend.zip
-echo -e "$color Configuring reverse proxy ${component} server $nocolor"
-cp /root/roboshop-shell/roboshop.conf  /etc/${component}/default.d/roboshop.conf
-echo -e "$color Enabling and starting the ${component} server$nocolor"
-systemctl enable ${component} &>>${logfile}
-systemctl restart ${component}
+echo -e "$color Configuring reverse proxy nginx server $nocolor"
+cp /root/roboshop-shell/roboshop.conf  /etc/nnginx/default.d/roboshop.conf
+echo -e "$color Enabling and starting the nginx server$nocolor"
+systemctl enable nginx &>>${logfile}
+systemctl restart nginx
 
 
