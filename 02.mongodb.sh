@@ -2,7 +2,7 @@ color="\e[32m"
 nocolor="\e[0m"
 logfile=="/tmp/mongodb.log"
 
-Echo -e "$color Downloading Mongodb Repo$nocolor"
+echo -e "$color Downloading Mongodb Repo$nocolor"
 cp /root/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongo.repo &>>$logfile
 echo -e "$color Installing Mongodb server$nocolor"
 yum install mongodb-org -y &>>$logfile
