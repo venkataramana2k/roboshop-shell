@@ -78,7 +78,7 @@ service_start()
   status
 }
 
-  maven()
+maven()
 {
   echo -e "$color Installing maven server$nocolor"
   yum install maven -y &>>${logfile}
