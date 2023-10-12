@@ -44,8 +44,8 @@ app_Start()
   useradd
   status
   echo -e "$color creating default app path $nocolor"
+  rm -rf ${app_path} &>>${logfile}
   mkdir ${app_path} &>>${logfile}
-  rm -rf *
   status
   cd ${app_path}
   echo -e "$color Downloading New App content and dependencies to ${component} server$nocolor"
