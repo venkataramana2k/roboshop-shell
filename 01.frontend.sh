@@ -10,6 +10,7 @@ echo -e "$color Downloading new content to nginx server $nocolor"
 curl -O https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>${logfile}
 unzip frontend.zip &>>${logfile}
 rm -rf frontend.zip
+cp /root/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf
 echo -e "$color Enabling and starting the nginx server$nocolor"
 systemctl enable nginx &>>${logfile}
 systemctl restart nginx
