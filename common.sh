@@ -14,7 +14,7 @@ status()
 {
   if [if $? -eq 0 ];then
     echo success
-  else
+   else
     echo failure
   fi
 }
