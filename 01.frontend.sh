@@ -1,17 +1,22 @@
-echo -e "\e[32m installing the Nginx server \e[0m"
-yum install nginx -y &>>/tmp/frontend.log
-echo -e "\e[32m Removing default content \e[0m"
+color="\e[32m"
+nocolor="\e[0m"
+logfile=="/tmp/frontend.log"
+
+echo -e "$color installing the Nginx server $nocolor"
+yum install nginx -y &>>${logfile}
+echo -e "$color Removing default content $nocolor"
 cd /usr/share/nginx/html
-rm -rf * &>>/tmp/frontend.log
-echo -e "\e[32m Downloading new content to nginx server \e[0m"
-curl -O https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>/tmp/frontend.log
-unzip frontend.zip &>>/tmp/frontend.log
+rm -rf * &>>${logfile}
+echo -e "$color Downloading new content to nginx server $nocolor"
+curl -O https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>${logfile}
+unzip frontend.zip &>>${logfile}
 rm -rf frontend.zip
-echo -e "\e[32m Configuring reverse proxy nginx server \e[0m"
+echo -e "$color Configuring reverse proxy nginx server $nocolor"
 cp /root/roboshop-shell/roboshop.conf  /etc/nginx/default.d/roboshop.conf
-echo -e "\e[32m Enabling and starting the Nginx server\e[0m"
-systemctl enable nginx &>>/tmp/frontend.log
+echo -e "$color Enabling and starting the Nginx server$nocolor"
+systemctl enable nginx &>>${logfile}
 systemctl restart nginx
+
 
 
 
