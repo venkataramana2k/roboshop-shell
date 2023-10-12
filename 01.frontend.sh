@@ -1,8 +1,8 @@
 source common.sh
-component=Nginx
+component=nginx
 
 echo -e "$color Installing ${component} server$nocolor"
-yum install Nginx -y &>>${logfile}
+yum install nginx -y &>>${logfile}
 echo -e "$color Removing default ${component} content $nocolor"
 cd /usr/share/${component}/html
 rm -rf * &>>${logfile}
