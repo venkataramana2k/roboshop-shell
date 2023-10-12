@@ -1,6 +1,6 @@
 color="\e[32m"
 nocolor="\e[0m"
-logfile=="/tmp/redis.log"
+logfile="/tmp/redis.log"
 
 echo -e "$color Downloading Redis repo$nocolor"
 yum install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y &>>$logfile
