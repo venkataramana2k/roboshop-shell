@@ -11,14 +11,16 @@ useradd()
   fi
 }
 
+
 status()
 {
   if [ $? -eq 0 ];then
     echo success
-   else
+  else
     echo failure
   fi
 }
+
 
 nodejs()
 {
@@ -34,6 +36,7 @@ nodejs()
   status
   service_start
 }
+
 
 app_Start()
 {
@@ -51,18 +54,20 @@ app_Start()
   rm -rf ${component}.zip
 }
 
+
 mongo_schema()
 {
   echo -e "$color Downloading and installing mongodb schema$nocolor"
   cp /root/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongodb.repo
   status
-  echo -e "$color installing mongo schema$nocolor"
+  echo -e "$color installing mongodb schema$nocolor"
   yum install mongodb-org-shell -y &>>${logfile}
   status
   echo -e "$color loading schema $nocolor"
-  mongo --host mongodb-dev.sadguru.shop <$app_path/schema/${component}.js &>>${logfile}
+  mongo --host mongodb-dev.sadguru.shop <${app_path}/schema/${component}.js &>>${logfile}
   status
 }
+
 
 service_start()
 {
@@ -70,13 +75,14 @@ service_start()
   cp /root/roboshop-shell/${component}.service /etc/systemd/system/${component}.service
   status
   echo -e "$color system reload the ${component} service $nocolor"
-  systemctl daemon-reload &>>${logfile}
+  systemctl daemon-reload
   status
   echo -e "$color Enabling and starting the ${component} service $nocolor"
   systemctl enable ${component} &>>{$logfile}
   systemctl restart ${component}
   status
 }
+
 
 maven()
 {
@@ -94,6 +100,7 @@ maven()
   service_start
 }
 
+
 mysql_schema()
 {
   echo -e "$color installing the mysql schema$nocolor"
@@ -103,6 +110,7 @@ mysql_schema()
   mysql -h mysql-dev.sadguru.shop -uroot -pRoboShop@1 </app/schema/${component}.sql &>>${logfile}
   status
 }
+
 
 python()
 {
