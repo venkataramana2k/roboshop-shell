@@ -69,6 +69,46 @@ mongo_schema()
   status
 }
 
+maven()
+{
+  echo -e "$color Installing maven server$nocolor"
+  yum install maven -y &>>${logfile}
+  status
+  app_start
+  echo -e "$color cleaning package$nocolor"
+  mvn clean package &>>${logfile}
+  status
+  echo -e "$color building application$nocolor"
+  mv target/${component}-1.0.jar ${component}.jar &>>${logfile}
+  status
+  mysql_schema
+  service_start
+}
+
+
+mysql_schema()
+{
+  echo -e "$color installing the mysql schema$nocolor"
+  yum install mysql -y &>>${logfile}
+  status
+  echo -e "$color setting mysql schema$nocolor"
+  mysql -h mysql-dev.sadguru.shop -uroot -pRoboShop@1 </${app_path}/schema/${component}.sql &>>${logfile}
+  status
+}
+
+
+python()
+{
+  echo -e "$color Installing python server$nocolor"
+  yum install python36 gcc python3-devel -y &>>${logfile}
+  status
+  app_start
+  echo -e "$color Downloading dependencies for python service$nocolor"
+  pip3.6 install -r requirements.txt &>>${logfile}
+  status
+  service_start
+}
+
 
 service_start()
 {
