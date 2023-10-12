@@ -14,5 +14,3 @@ systemctl enable nginx &>>/tmp/frontend.log
 systemctl restart nginx
 
 
-
-
