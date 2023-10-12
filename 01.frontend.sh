@@ -4,7 +4,7 @@ component=Nginx
 echo -e "$color Installing ${component} server$nocolor"
 yum install ${component} -y &>>${logfile}
 echo -e "$color Removing default ${component}/html content $nocolor"
-cd /usr/share/${component}/html/*
+cd /usr/share/${component}
 rm -rf * &>>${logfile}
 echo -e "$color Downloading new content to ${component}$nocolor"
 curl -O https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>${logfile}
