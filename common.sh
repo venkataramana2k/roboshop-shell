@@ -10,6 +10,7 @@ useradd()
      useradd roboshop &>>${logfile}
   fi
 }
+
 status()
 {
   if [ $? -eq 0 ];then
@@ -40,9 +41,9 @@ app_Start()
   useradd
   status
   echo -e "$color creating default app path $nocolor"
-  mkdir $app_path &>>${logfile}
+  mkdir ${app_path} &>>${logfile}
   status
-  cd $app_path
+  cd ${app_path}
   echo -e "$color Downloading New App content and dependencies to ${component} server$nocolor"
   curl -O https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${logfile}
   unzip ${component}.zip &>>${logfile}
