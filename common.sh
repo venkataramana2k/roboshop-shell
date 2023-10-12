@@ -6,7 +6,7 @@ app_path="/app"
 useradd()
 {
   id roboshop &>>${logfile}
-   if [ $? -ne o ];then
+   if [ $? -ne 0 ];then
      useradd roboshop &>>${logfile}
   fi
 }
