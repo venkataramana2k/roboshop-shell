@@ -72,7 +72,7 @@ service_start()
   echo -e "$color system reload the ${component} service $nocolor"
   systemctl daemon-reload &>>${logfile}
   status
-  echo -e "$color Enabling and starting the ${component} service$nocolor"
+  echo -e "$color Enabling and starting the ${component} service $nocolor"
   systemctl enable ${component} &>>{$logfile}
   systemctl restart ${component}
   status
