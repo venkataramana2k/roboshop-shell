@@ -15,4 +15,3 @@ sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/redis/redis.conf
 echo -e "$color Enabling and starting Redis server$nocolor"
 systemctl enable redis &>>$logfile
 systemctl restart redis
-
