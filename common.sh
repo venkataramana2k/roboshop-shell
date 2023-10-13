@@ -52,6 +52,7 @@ app_Start()
   curl -O https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${logfile}
   unzip ${component}.zip &>>${logfile}
   status
+  rm -rf ${component}.zip
 }
 
 
