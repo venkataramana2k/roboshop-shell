@@ -68,6 +68,23 @@ mongo_schema()
   mongo --host mongodb-dev.sadguru.shop <${app_path}/schema/${component}.js &>>${logfile}
   status
 }
+
+
+service_start()
+{
+  echo -e "$color Creating ${component} service $nocolor"
+  cp /root/roboshop-shell/${component}.service /etc/systemd/system/${component}.service
+  status
+  echo -e "$color system reload the ${component} service $nocolor"
+  systemctl daemon-reload
+  status
+  echo -e "$color Enabling and starting the ${component} service $nocolor"
+  systemctl enable ${component} &>>{$logfile}
+  systemctl restart ${component}
+  status
+}
+
+
 maven()
 {
   echo -e "$color Installing maven server$nocolor"
@@ -107,20 +124,4 @@ python()
   status
   service_start
 }
-
-
-service_start()
-{
-  echo -e "$color Creating ${component} service $nocolor"
-  cp /root/roboshop-shell/${component}.service /etc/systemd/system/${component}.service
-  status
-  echo -e "$color system reload the ${component} service $nocolor"
-  systemctl daemon-reload
-  status
-  echo -e "$color Enabling and starting the ${component} service $nocolor"
-  systemctl enable ${component} &>>{$logfile}
-  systemctl restart ${component}
-  status
-}
-
 
