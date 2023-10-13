@@ -30,7 +30,7 @@ nodejs()
   echo -e "$color Installing Nodejs Server$nocolor"
   yum install nodejs -y &>>${logfile}
   status
-  app_Start
+  app_start
   echo -e "$color installing dependencies $nocolor"
   npm install &>>${logfile}
   status
