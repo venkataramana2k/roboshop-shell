@@ -1,5 +1,4 @@
 source common.sh
-component=nginx
 
 echo -e "$color installing the nginx server $nocolor"
 yum install nginx -y &>>${logfile}
