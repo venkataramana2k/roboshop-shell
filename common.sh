@@ -79,7 +79,7 @@ service_start()
   systemctl daemon-reload
   status
   echo -e "$color Enabling and starting the ${component} service $nocolor"
-  systemctl enable ${component} &>>{$logfile}
+  systemctl enable ${component} &>>${logfile}
   systemctl restart ${component}
   status
 }
