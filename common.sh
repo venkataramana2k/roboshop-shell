@@ -54,6 +54,7 @@ app_start()
 
 mongo_schema()
 {
+  systemctl daemon-reload
   echo -e "$color Downloading and installing mongodb schema$nocolor"
   cp /root/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongodb.repo
   status
@@ -61,7 +62,7 @@ mongo_schema()
   yum install mongodb-org-shell -y &>>${logfile}
   status
   echo -e "$color installing schema $nocolor"
-  mongo --host mongodb-dev.sadguru.shop <${app_path}/schema/${component}.js &>>${logfile}
+  mongo --host mongodb-dev.sadguru.shop  </app/schema/catalogue.js &>>${logfile}
   status
 }
 
