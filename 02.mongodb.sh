@@ -11,3 +11,4 @@ sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 echo -e "$color Enabling and starting Mongodb server$nocolor"
 systemctl enable mongod &>>${logfile}
 systemctl restart mongod
+
