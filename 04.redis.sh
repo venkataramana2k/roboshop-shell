@@ -4,7 +4,7 @@ logfile="/tmp/redis.log"
 
 echo -e "$color Downloading Redis repo$nocolor"
 yum install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y &>>$logfile
-echo -e"$$color Enabling Redis-6.2 from package$nocolor"
+echo -e "$color Enabling Redis-6.2 from package$nocolor"
 Yum module List &>>$logfile
 yum module enable redis:remi-6.2 -y &>>$logfile
 echo -e "$color Installing Redis$nocolor"
