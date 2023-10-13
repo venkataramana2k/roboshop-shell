@@ -7,7 +7,7 @@ curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash &>>$logfile
 echo -e "$color Installing Rabbitmq-server$nocolor"
 yum install rabbitmq-server -y &>>$logfile
-echo - "$color Enabling and starting the Rabbitmq-server$nocolor"
+echo -e "$color Enabling and starting the Rabbitmq-server$nocolor"
 systemctl enable rabbitmq-server &>>$logfile
 systemctl start rabbitmq-server
 echo -e "$color Adding user and setting permissions $nocolor"
