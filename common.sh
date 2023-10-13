@@ -38,7 +38,7 @@ nodejs()
 }
 
 
-app_Start()
+app_start()
 {
   echo -e "$color Adding user$nocolor"
   useradd
