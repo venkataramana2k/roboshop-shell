@@ -57,10 +57,10 @@ mongo_schema()
   echo -e "$color Downloading and installing mongodb schema$nocolor"
   cp /root/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongodb.repo
   status
-  echo -e "$color installing mongodb schema$nocolor"
+  echo -e "$color loading mongodb schema$nocolor"
   yum install mongodb-org-shell -y &>>${logfile}
   status
-  echo -e "$color loading schema $nocolor"
+  echo -e "$color installing schema $nocolor"
   mongo --host mongodb-dev.sadguru.shop <${app_path}/schema/${component}.js &>>${logfile}
   status
 }
