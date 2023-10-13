@@ -65,7 +65,7 @@ mongo_schema()
   yum install mongodb-org-shell -y &>>${logfile}
   status
   echo -e "$color loading schema $nocolor"
-  mongo --host mongodb-dev.sadguru.shop <${app_path}/schema/${component}.js &>>${logfile}
+  mongo --host mongodb-dev.sadguru.shop </${app_path}/schema/${component}.js &>>${logfile}
   status
 }
 
