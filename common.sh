@@ -3,13 +3,6 @@ nocolor="\e[0m"
 logfile="/tmp/roboshop.log"
 app_path="/app"
 
-useradd()
-{
-  id roboshop &>>${logfile}
-   if [ $? -ne 0 ];then
-     useradd roboshop &>>${logfile}
-  fi
-}
 
 
 status()
@@ -41,7 +34,10 @@ nodejs()
 app_start()
 {
   echo -e "$color Adding user$nocolor"
-  useradd
+  id roboshop &>>${logfile}
+  if [ $? -ne 0 ];then
+    useradd roboshop &>>${logfile}
+  fi
   status
   echo -e "$color creating default app path $nocolor"
   rm -rf ${app_path} &>>${logfile}
