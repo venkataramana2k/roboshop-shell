@@ -1,6 +1,6 @@
 color="\e[32m"
 nocolor="\e[0m"
-logfile=="/tmp/rabbitmq.log"
+logfile="/tmp/rabbitmq.log"
 
 echo -e "$color Downloading rabbitmq repo file$nocolor"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash &>>$logfile
@@ -13,4 +13,5 @@ systemctl start rabbitmq-server
 echo -e "$color Adding user and setting permissions $nocolor"
 rabbitmqctl add_user roboshop roboshop123 &>>$logfile
 rabbitmqctl set permissions -p /roboshop ".*" ".*" ".*" &>>$logfile
+
 
