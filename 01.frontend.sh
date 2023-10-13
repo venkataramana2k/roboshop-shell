@@ -16,4 +16,3 @@ systemctl enable nginx &>>${logfile}
 systemctl restart nginx
 
 
-
