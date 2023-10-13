@@ -14,4 +14,3 @@ echo -e "$color Enabling and starting Mysql server$nocolor"
 systemctl enable mysqld &>>${logfile}
 systemctl restart mysqld
 
-
