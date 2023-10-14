@@ -1,6 +1,6 @@
 color="\e[32m"
 nocolor="\e[0m"
-logfile=="/tmp/dispatch.log"
+logfile="/tmp/dispatch.log"
 
 echo -e "$color Installing golang server$nocolor"
 yum install golang -y &>>${logfile}
