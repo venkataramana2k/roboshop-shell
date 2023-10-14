@@ -104,7 +104,7 @@ mysql_schema()
   yum install mysql -y &>>${logfile}
   status
   echo -e "$color setting mysql schema$nocolor"
-  mysql -h mysql-dev.sadguru.shop -uroot -pRoboShop@1 </app/schema/${component}.sql &>>${logfile}
+  mysql -h mysql-dev.sadguru.shop -uroot -pRoboShop@1 </app/schema/shipping.sql &>>${logfile}
   status
 }
 
