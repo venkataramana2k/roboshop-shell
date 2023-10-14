@@ -61,7 +61,7 @@ mongo_schema()
   yum install mongodb-org-shell -y &>>${logfile}
   status
   echo -e "$color installing schema $nocolor"
-  mongo --host mongodb-dev.sadguru.shop  </app/schema/{component}.js &>>${logfile}
+  mongo --host mongodb-dev.sadguru.shop  </app/schema/${component}.js &>>${logfile}
   status
 }
 
