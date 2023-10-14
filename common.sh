@@ -116,7 +116,7 @@ python()
   status
   app_start
   echo -e "$color Downloading dependencies for python service$nocolor"
-  pip3.6 install -r requirements.txt &>>${logfile}
+  pip3.6 install -y requirements.txt &>>${logfile}
   status
   service_start
 }
