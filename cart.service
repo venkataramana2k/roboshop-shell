@@ -2,8 +2,8 @@
 Description = Cart Service
 [Service]
 User=roboshop
-Environment=REDIS_HOST=redis-dev.sadguru.shop
-Environment=CATALOGUE_HOST=catalogue-dev.sadguru.shop
+Environment=REDIS_HOST=redis-dev.venkata.cloud
+Environment=CATALOGUE_HOST=catalogue-dev.venkata.cloud
 Environment=CATALOGUE_PORT=8080
 ExecStart=/bin/node /app/server.js
 SyslogIdentifier=cart
