@@ -18,7 +18,7 @@ status()
 nodejs()
 {
   echo -e "$color Downloading NodeJs Repo$nocolor"
-  curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${logfile}
+  curl -sL https://rpm.nodesource.com/setup_19.x | sudo -E bash - &>>${logfile}
   status
   echo -e "$color Installing Nodejs Server$nocolor"
   yum install nodejs -y &>>${logfile}
